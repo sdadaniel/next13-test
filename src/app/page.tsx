@@ -1,16 +1,14 @@
-export default async function Page() {
-  async function handleSubmit(formData: any) {
-    "use server";
+import ArtistPage from "@/components.server/Artist";
 
-    console.log(formData.get("title"));
-  }
-
+export default function App() {
   return (
-    <div>
-      <form action={handleSubmit}>
-        <input name="title" />
-        <button type="submit">Submit</button>
-      </form>
-    </div>
+    <>
+      <ArtistPage
+        artist={{
+          id: "the-beatles",
+          name: "The Beatles",
+        }}
+      />
+    </>
   );
 }
